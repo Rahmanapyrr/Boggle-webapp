@@ -105,7 +105,7 @@ function RandomGrid() {
     const justguessed = this.state.justguessed;
 
     return (
-      <div className = "Game">
+      <div className = "game">
         <div>
           <Timer seconds={this.state.seconds} />
           <Board board={this.state.grid}/>
