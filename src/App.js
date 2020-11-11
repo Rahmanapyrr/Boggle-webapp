@@ -1,13 +1,10 @@
 import './App.css';
 import { Component } from 'react';
 import React, { useState } from 'react';
-import anime from 'animejs';
 import {Spring} from 'react-spring/renderprops';
 import { useSpring, animated } from "react-spring";
 import Game from './gameComponents/Game';
-import ParticleEffectButton from 'react-particle-effect-button'
-import DemoBlock from './DemoBlock'
-import demos from './demos'
+
 
 function App() {
   const [playing, setPlaying] = useState(false);
@@ -30,6 +27,7 @@ function App() {
   return (
     <div className = 'App'>
          <Spring
+          config={{duration: 2500}}
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}>
           {props => <div style={props}>

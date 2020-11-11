@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Game.css';
 import Board from './Board';
 import findAllSolutions from'./boggle_solver';
 import valid_words from './wordlist';
@@ -40,11 +41,13 @@ function RandomGrid() {
 
     //initializing the game state
     this.state = {
+      justguessed: null,
       grid: rand_grid,
       guess: '',
       correctGuesses: [],
       guesses: [],
       allSolutions: solutions,
+      score: 0,
       scoredWords:[],
       isFinished:false,
       seconds: 60,
@@ -58,20 +61,25 @@ function RandomGrid() {
   }
   submitGuess = (e) => {
     e.preventDefault();
+    const score = this.state.score
+    const justguessed = this.state.justguessed
     const guess = this.state.guess
     const guesses = this.state.guesses
     const correctGuesses = this.state.correctGuesses
     const allSolutions = this.state.allSolutions
     if (guesses.includes(guess)) {
-      alert("Already tried that word!");
+      this.setState({justguessed:"Already tried that word!"})
     }
     else if (allSolutions.has(guess)) {
       this.setState({correctGuesses:[...correctGuesses, guess]})
+      this.setState({score:score + 1})
+      this.setState({justguessed:"That's Correct!"})
+    }
+    else {
+      this.setState({justguessed:"Try Again!"})
     }
 
     this.setState({guesses:[...guesses, guess]})
-    // newguesses = this.guesses.push(guess);
-    // this.setState({guesses:newguesses});
     this.setState({guess: ''})
   }
   finishGame = () => {
@@ -94,24 +102,29 @@ function RandomGrid() {
     );
     const isFinished = this.state.isFinished;
     const scoredWords = this.state.scoredWords;
+    const justguessed = this.state.justguessed;
 
     return (
-      <div>
-        <Timer seconds={this.state.seconds} />
-        <Board board={this.state.grid}/>
-        <button onClick={this.finishGame}>Stop</button>
+      <div className = "Game">
+        <div>
+          <Timer seconds={this.state.seconds} />
+          <Board board={this.state.grid}/>
+          <button onClick={this.finishGame}>Stop</button>
+        </div>
+
+        <div>
         <form autocomplete="off">
           <input
             name='guess'
             value={this.state.guess}
             onChange={(e) => this.changeGuess(e)} />
-          <button hidden onClick={(e) => this.submitGuess(e)}>Guess</button>
+          <button onClick={(e) => this.submitGuess(e)}>Guess</button>
         </form>
-        {isFinished ? <Score words={scoredWords} /> : correctGuesses}
+        {isFinished ? <Score words={scoredWords} /> : justguessed}
+        </div>
       </div>
     )
   }
 }
-
 
 export default Game;

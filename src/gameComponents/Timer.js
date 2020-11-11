@@ -13,7 +13,7 @@ class Timer extends Component {
   }
   render() {
     return (
-      <div class="timer">
+      <div class="Timer">
         { this.state.secondsLeft
           ? <span>You have {this.state.secondsLeft} seconds left.</span>
           : <span>Time's Up!</span>

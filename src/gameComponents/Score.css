@@ -1,8 +1,13 @@
+.wordlist {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .wordlist .incorrect {
     color: red;
   }
   
   .wordlist .correct {
     color: green;
-    font-size: 500%;
   }
