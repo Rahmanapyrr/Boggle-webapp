@@ -2,23 +2,24 @@ import React, { Component } from 'react';
 import Popup from 'reactjs-popup';
 import './Score.css';
 
+
 class Score extends Component {
   render() {
     const words = this.props.words;
     const total = words.length;
-    const num_correct = words.filter(x=>x.correct).length
-
-    const Modal = () => (
-      <Popup trigger={<button className="button"> Open Modal </button>} modal>
-        <span> Modal content </span>
-      </Popup>
-    )
-
+    var correct_words = words.filter(x=>x.correct)
+    const num_correct = correct_words.length
+    const words_missed = words.filter(x=>!x.correct);
+    
+    const stringCorrect = <h2>You found these words: </h2>;
+    if (correct_words.length === 0){
+      correct_words = [{correct:true, text:"None"}]
+    }
     return (
-      <div class="wordlist">
-        
+      <div>
+
         <Popup
-    trigger={<button className="button"> Open Modal </button>}
+    trigger={<button className="button"> Click Here to See What Words You Missed </button>}
     modal
     nested
   >
@@ -27,42 +28,34 @@ class Score extends Component {
         <button className="close" onClick={close}>
           &times;
         </button>
-        <div className="header"> Modal Title </div>
+        <div className="header"> Score Details </div>
         <div className="content">
-          {' '}
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, a nostrum.
-          Dolorem, repellat quidem ut, minima sint vel eveniet quibusdam voluptates
-          delectus doloremque, explicabo tempore dicta adipisci fugit amet dignissimos?
+          <div>
+            <h>{stringCorrect}</h>
+          </div>
+          <div>
+            {correct_words.map((word) => <h>{word.text}</h>)}
+          </div>
+          <div>
+            <h2>Oopsie, Looks like you missed these words:</h2> 
+          </div>
+          {words_missed.map((word) => <h>{word.text},  </h>)}
         </div>
         <div className="actions">
-          <Popup
-            trigger={<button className="button"> Trigger </button>}
-            position="top center"
-            nested
-          >
-            <span>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
-              magni omnis delectus nemo, maxime molestiae dolorem numquam
-            </span>
-          </Popup>
-
           <button
             className="button"
             onClick={() => {
               console.log('modal closed ');
               close();
             }}
-          >
-            close modal
+          >Close 
           </button>
         </div>
       </div>
     )}
+
   </Popup>
       You found {num_correct} words out of {total}!
-      {/* {words.map((word, i) => {
-        return <div class={word.correct?"correct":"incorrect"}>{word.text}</div>
-      })} */}
       </div>
     );
   }

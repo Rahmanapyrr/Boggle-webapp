@@ -31,7 +31,7 @@ function App() {
           from={{ opacity: 0 }}
           to={{ opacity: 1 }}>
           {props => <div style={props}>
-            { playing ? null : <h1 class="appTitle">BOGGLE</h1> }
+            { playing ? null : <h1 style = {{fontSize: "150px"}}>BOGGLE</h1> }
             </div>}
         </Spring>
       { playing ? <Game /> : null }

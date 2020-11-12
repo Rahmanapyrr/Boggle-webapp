@@ -6,7 +6,7 @@ class Board extends Component {
     const board = this.props.board;
     // const color_ = this.props.color;
     return (
-      <div class="board">
+      <div class="board" style = {{alignSelf:'center'}}>
       <table>
       {board.map((row, i) => {
         return (

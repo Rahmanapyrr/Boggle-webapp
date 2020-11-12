@@ -106,22 +106,29 @@ function RandomGrid() {
 
     return (
       <div className = "game">
+         {isFinished ? "Game Ended" :
         <div>
           <Timer seconds={this.state.seconds} />
-          <Board board={this.state.grid}/>
-          <button onClick={this.finishGame}>Stop</button>
+          </div>}
+
+        <div>
+          {isFinished ? null : <Board board = {this.state.grid} />}
+        </div>
+        <div>
+         {isFinished ? null : <button onClick={this.finishGame}>Stop</button> }
         </div>
 
         <div>
+        {isFinished ? null :
         <form autocomplete="off">
           <input
             name='guess'
             value={this.state.guess}
             onChange={(e) => this.changeGuess(e)} />
           <button onClick={(e) => this.submitGuess(e)}>Guess</button>
-        </form>
-        {isFinished ? <Score words={scoredWords} /> : justguessed}
+        </form>}
         </div>
+        {isFinished ? <Score words={scoredWords} /> : justguessed}
       </div>
     )
   }

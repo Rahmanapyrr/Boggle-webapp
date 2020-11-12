@@ -15,7 +15,7 @@ class Timer extends Component {
     return (
       <div class="Timer">
         { this.state.secondsLeft
-          ? <span>You have {this.state.secondsLeft} seconds left.</span>
+          ? <span>{this.state.secondsLeft} Seconds left.</span>
           : <span>Time's Up!</span>
         }
       </div>

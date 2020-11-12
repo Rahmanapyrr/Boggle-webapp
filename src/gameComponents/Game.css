@@ -5,8 +5,9 @@
   }
 
 .Game .game {
-    position: relative;
+    size: fixed;
     min-height: 100vh;
+    font-size: 10%;
     z-index:1;
     margin: auto;
     display: flex;

@@ -3,6 +3,9 @@
   position: relative; 
 }
 
+text {
+  margin: 10px;
+}
 .App .main {
   position: relative;
   min-height: 100vh;
@@ -12,7 +15,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(20px + 3vmin);
-  color: rgb(168, 53, 53);
+  color: rgb(0, 0, 0);
 }
 
 .App .particles-js {
@@ -30,20 +33,19 @@
   z-index:-1;
 }
 
-
-.App-link {
-  color: #61dafb;
-}
-
 button {
   display: inline-block;
   padding: 1em 2em;
-  background: 	#FF6961;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+  background: 	#e92525;
+  color: rgb(255, 255, 255);
   font-size: 0.8em;
   font-weight: 700;
-  border: none;
+  box-shadow: 4px black;
+  text-shadow: black;
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: .5em 2em;
   cursor: pointer;
   position: relative;

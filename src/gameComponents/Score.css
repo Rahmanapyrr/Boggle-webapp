@@ -1,31 +1,23 @@
-.wordlist {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.wordlist .incorrect {
-    color: red;
-  }
-  
-  .wordlist .correct {
-    color: green;
-  }
 
   .modal {
-    font-size: 25px;
-    background-color: slategrey;
+    font-size: auto;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    background-color: rgba(255, 255, 255, 0.8);
   }
   .modal > .header {
     width: 100%;
-    border-bottom: 1px solid gray;
-    font-size: 18px;
+    border-bottom: 1px solid rgb(248, 95, 95);
+    font-size: 20px;
     text-align: center;
     padding: 5px;
   }
   .modal > .content {
-    width: 100%;
-    padding: 10px 5px;
+    width: 80%;
+    padding: auto;
   }
   .modal > .actions {
     width: 100%;
