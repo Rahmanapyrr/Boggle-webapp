@@ -5,6 +5,7 @@ import findAllSolutions from'./boggle_solver';
 import valid_words from './wordlist';
 import Score from './Score';
 import Timer from './Timer';
+import ParticlesBg from "particles-bg";
 
 
 

@@ -3,6 +3,7 @@ import { Component } from 'react';
 import React, { useState } from 'react';
 import {Spring} from 'react-spring/renderprops';
 import { useSpring, animated } from "react-spring";
+import ParticlesBg from "particles-bg";
 import Game from './gameComponents/Game';
 
 
@@ -35,7 +36,10 @@ function App() {
             </div>}
         </Spring>
       { playing ? <Game /> : null }
-      { playing ? stop : start }  
+      { playing ? stop : start } 
+        <div className='bubbles'>
+          <ParticlesBg color="#000000" num={100} type="cobweb" bg={true}></ParticlesBg>
+        </div>
       </div>
   );
 }
