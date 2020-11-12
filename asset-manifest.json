@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Boggle-webapp/static/css/main.4dec3968.chunk.css",
+    "main.js": "/Boggle-webapp/static/js/main.0baa3ccf.chunk.js",
+    "main.js.map": "/Boggle-webapp/static/js/main.0baa3ccf.chunk.js.map",
+    "runtime-main.js": "/Boggle-webapp/static/js/runtime-main.b9704a93.js",
+    "runtime-main.js.map": "/Boggle-webapp/static/js/runtime-main.b9704a93.js.map",
+    "static/js/2.1fb6e091.chunk.js": "/Boggle-webapp/static/js/2.1fb6e091.chunk.js",
+    "static/js/2.1fb6e091.chunk.js.map": "/Boggle-webapp/static/js/2.1fb6e091.chunk.js.map",
+    "static/js/3.71db1ed0.chunk.js": "/Boggle-webapp/static/js/3.71db1ed0.chunk.js",
+    "static/js/3.71db1ed0.chunk.js.map": "/Boggle-webapp/static/js/3.71db1ed0.chunk.js.map",
+    "index.html": "/Boggle-webapp/index.html",
+    "static/css/main.4dec3968.chunk.css.map": "/Boggle-webapp/static/css/main.4dec3968.chunk.css.map",
+    "static/js/2.1fb6e091.chunk.js.LICENSE.txt": "/Boggle-webapp/static/js/2.1fb6e091.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b9704a93.js",
+    "static/js/2.1fb6e091.chunk.js",
+    "static/css/main.4dec3968.chunk.css",
+    "static/js/main.0baa3ccf.chunk.js"
+  ]
+}
